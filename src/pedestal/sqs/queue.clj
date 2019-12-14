@@ -1,6 +1,6 @@
 (ns pedestal.sqs.queue
   (:require [cognitect.aws.client.api :as aws]
-            [io.pedestal.log :as log]))
+            [clojure.tools.logging :as log]))
 
 ;; Utility AWS SQS Queue
 

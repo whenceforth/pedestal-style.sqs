@@ -9,7 +9,6 @@
                  [org.clojure/test.check "0.10.0"]
 
                  [io.pedestal/pedestal.service "0.5.7"]
-                 [io.pedestal/pedestal.log "0.5.7"]
                  [io.pedestal/pedestal.interceptor "0.5.7"]
 
 
@@ -18,6 +17,7 @@
                  [com.cognitect.aws/sqs "770.2.568.0"]
                  [org.clojure/data.json "0.2.7"]
                  [org.clojure/data.xml "0.2.0-alpha6"]
+                 [org.clojure/tools.logging "0.5.0"]
 
                  [cheshire "5.9.0"]]
   :min-lein-version "2.0.0"

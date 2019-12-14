@@ -3,7 +3,7 @@
             [clojure.core.async :as a]
             [io.pedestal.interceptor :as interceptor]
             [io.pedestal.interceptor.chain :as interceptor.chain]
-            [io.pedestal.log :as log]
+            [clojure.tools.logging :as log]
             [pedestal.bootstrap :as bootstrap-fixme]
             [pedestal.sqs.queue :as queue]
             [pedestal.sqs.messaging :as messaging]
