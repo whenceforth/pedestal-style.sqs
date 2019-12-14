@@ -5,18 +5,18 @@
             :url          "http://opensource.org/licenses/MIT"
             :distribution :repo}
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [org.clojure/core.async "0.4.500"]
-                 [org.clojure/test.check "0.10.0-RC1"]
+                 [org.clojure/core.async "0.6.532"]
+                 [org.clojure/test.check "0.10.0"]
 
                  [io.pedestal/pedestal.service "0.5.7"]
                  [io.pedestal/pedestal.log "0.5.7"]
                  [io.pedestal/pedestal.interceptor "0.5.7"]
 
 
-                 [com.cognitect.aws/api "0.8.345"]
-                 [com.cognitect.aws/endpoints "1.1.11.592"]
-                 [com.cognitect.aws/sqs "736.2.496.0"]
-                 [org.clojure/data.json "0.2.6"]
+                 [com.cognitect.aws/api "0.8.408"]
+                 [com.cognitect.aws/endpoints "1.1.11.689"]
+                 [com.cognitect.aws/sqs "770.2.568.0"]
+                 [org.clojure/data.json "0.2.7"]
                  [org.clojure/data.xml "0.2.0-alpha6"]
 
                  [cheshire "5.9.0"]]
