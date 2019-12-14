@@ -4,7 +4,7 @@
             [io.pedestal.interceptor :as interceptor]
             [io.pedestal.interceptor.chain :as interceptor.chain]
             [io.pedestal.log :as log]
-            [io.pedestal.http :as bootstrap]
+            [pedestal.bootstrap :as bootstrap-fixme]
             [pedestal.sqs.queue :as queue]
             [pedestal.sqs.messaging :as messaging]
             [pedestal.sqs.interceptors :as sqs.interceptors]
@@ -123,8 +123,7 @@
 
     (log/info :sqs "Starting listener SQS queues")
 
-    (let [bootstrapped-service-map (if (::bootstrap/routes service-map) (bootstrap/default-interceptors service-map) service-map)
-          default-interceptors (::bootstrap/interceptors bootstrapped-service-map)
+    (let [default-interceptors {}
           interceptor-with-sqs {:name  ::sqs-components
                                 :enter (fn [context]
                                          (-> context
@@ -134,8 +133,8 @@
                                                (into {} (map #(hash-map (:queue-name %) (:queue-id %)) listeners)))))}]
 
       (assoc
-        bootstrapped-service-map
-        ::bootstrap/interceptors
+        service-map
+        ::bootstrap-fixme/interceptors
         (into default-interceptors [(interceptor/interceptor interceptor-with-sqs)])))))
 
 ;; Core functions

@@ -1,12 +1,10 @@
 
-# pedestal.sqs
+# pedestal-style.sqs
 
-[![Build Status](https://travis-ci.org/RenanPalmeira/pedestal.sqs.svg?branch=master)](https://travis-ci.org/RenanPalmeira/pedestal.sqs)
-[![Clojars Project](https://img.shields.io/clojars/v/pedestal.sqs.svg)](https://clojars.org/pedestal.sqs)
+A simple Pedestal-style interface for AWS SQS, forked from [pedestal.sqs](https://github.com/renanpalmeira/pedestal.sqs)
+to remove the ties to the Pedestal web layer but retain its interceptor model.
 
-A simple Pedestal interface for AWS SQS.
-
-**Requires Clojure 1.10.*, Java 1.8+ and Servlet 3.1**
+**Requires Clojure 1.10.* and Java 1.8+**
 
 ## Usage
 
@@ -158,15 +156,15 @@ Example to valid sqs configurations and start sqs listeners
 If you want publish in a queue from a pedestal route request argument have :sqs-client and :queues (configured in your project, if is a external queue use `(queue/get-queue-id sqs-client "queue-name")`) 
 
 ```
-(defn home-page
-  [request]
-  (let [sqs-client (:sqs-client request)
-        queues (:queues request)]
+(defn send-message 
+  [service-map]
+  (let [sqs-client (:sqs-client service-map)
+        queues (:queues service-map)]
     (messaging/send-message!
       sqs-client ;; same client configured by you and used internally of pedestal.sqs
       (get queues "bar-queue") ;; here a shortcut to queues configured in your project
       (messaging/to-json {:example "example"}))
-    (ring-resp/response "Hello from pedestal.sqs!")))
+    "Hello from pedestal-style.sqs!"))
 ```
 
 Read more in [https://github.com/RenanPalmeira/basic-pedestal-sqs-example](https://github.com/RenanPalmeira/basic-pedestal-sqs-example)
