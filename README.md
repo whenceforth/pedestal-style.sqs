@@ -184,6 +184,12 @@ The `messaging/send-message!` has the arguments:
 * `pedestal.sqs.messaging`
 * `pedestal.sqs.interceptors`
 
+## Testing
+To test, run: 
+    `lein integration-test`.  
+
+This runs an in-memory sqs simulator. If you use instead run ~~lein test~~, the simulator will not be started and tests will fail.
+
 ## Links
 * [pedestal.kafka](https://github.com/cognitect-labs/pedestal.kafka)
 * [cognitect-labs/aws-api](https://github.com/cognitect-labs/aws-api)
