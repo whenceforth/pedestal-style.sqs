@@ -1,4 +1,4 @@
-(defproject pedestal-style.sqs "1.0.1-alpha1"
+(defproject pedestal-style.sqs "0.0.1"
   :description "Pedestal-style interface for AWS SQS."
   :url "https://github.com/whenceforth/pedestal-style.sqs"
   :license {:name         "The MIT License"
